@@ -25,6 +25,8 @@ return [
 
     'allowed_headers' => ['*'],
 
+    // 'Access-Control-Allow-Headers' => ['x-csrf-token'],
+
     'exposed_headers' => [],
 
     'max_age' => 0,
