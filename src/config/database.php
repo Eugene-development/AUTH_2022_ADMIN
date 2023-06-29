@@ -43,6 +43,10 @@ return [
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
 
+
+        // 'options' => extension_loaded('pdo_mysql') ? array_filter([
+        //     PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+        // ]) : [],
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
@@ -62,7 +66,7 @@ return [
                 PDO::MYSQL_ATTR_SSL_CA => '/path/ca.pem',
                 PDO::MYSQL_ATTR_SSL_KEY => '/path/client-key.pem',
                 PDO::MYSQL_ATTR_SSL_CERT => '/path/client-cert.pem',
-            ]) + [PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,] : [],
+            ]) + [PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => '~/.mysql/root.crt'] : [],
         ],
 
         'pgsql' => [
